@@ -41,7 +41,7 @@ It was challenging to do the autolayout by myself. It was also challenging to se
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Ka Kin Chiu]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

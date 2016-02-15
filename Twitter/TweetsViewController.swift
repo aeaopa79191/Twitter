@@ -8,12 +8,14 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,UIScrollViewDelegate {
     
     var tweets: [Tweet]?
     
     var refreshControl: UIRefreshControl!
     let delay = 3.0 * Double(NSEC_PER_SEC)
+    
+     var isMoreDataLoading = false
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,13 +24,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        
+    
         //adding the tableview
         tableView.delegate = self
         tableView.dataSource = self
-
-        
         
         //here code for pull to refresh
         refreshControl = UIRefreshControl()
@@ -87,16 +86,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    
-    
-    /*
-    func testTweets() {
-    let tweet = tweets![0]
-    print(tweet.user!.name)
-    //print(tweet.retweetCount as! Int)
-    //print(tweet.favCount as! Int)
-    }
-    */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
         
@@ -108,24 +97,81 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    //tvds ends here
-    
-    
-    
-    
-    
-    
-    
-    
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
+    }
+/*
+    //making infinite scroll
+    func loadMoreData(){
+        let clientId = "e05c462ebd86446ea48a5af73769b602"
+        let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
+        let request = NSURLRequest(URL: url!)
+        let session = NSURLSession(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            delegate:nil,
+            delegateQueue:NSOperationQueue.mainQueue()
+        )
         
-        //to add the segue from home to login
-        //self.performSegueWithIdentifier("logoutSegue", sender: self)
+        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+            completionHandler: { (dataOrNil, response, error) in
+                if let data = dataOrNil {
+                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                        data, options:[]) as? NSDictionary {
+                            NSLog("response: \(responseDictionary)")
+                            self.isMoreDataLoading = false
+                            self.media = responseDictionary["data"] as? [NSDictionary]
+                            self.tableView.reloadData()
+                    }
+                }
+        });
+        task.resume()
+    }
+*/
+    
+/*
+    func loadMoreData() {
+        let clientId = "e05c462ebd86446ea48a5af73769b602"
+        let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
+        let request = NSURLRequest(URL: url!)
+        let session = NSURLSession(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            delegate:nil,
+            delegateQueue:NSOperationQueue.mainQueue()
+        )
         
+        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+            completionHandler: { (dataOrNil, response, error) in
+                if let data = dataOrNil {
+                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                        data, options:[]) as? NSDictionary {
+                            NSLog("response: \(responseDictionary)")
+                            self.isMoreDataLoading = false
+                            self.media = responseDictionary["data"] as? [NSDictionary]
+                            self.tableView.reloadData()
+                    }
+                }
+        });
+        task.resume()
     }
 
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                
+                isMoreDataLoading = true
+                
+                // Code to load more results
+                loadMoreData()
+            }
+        }
+    }
+    */
 
     /*
     // MARK: - Navigation

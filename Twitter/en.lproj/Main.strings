@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "Login with Twitter"; ObjectID = "6QE-eJ-QRP"; */
+"6QE-eJ-QRP.normalTitle" = "Login with Twitter";
+
+/* Class = "UILabel"; text = "SportsCenter"; ObjectID = "8ic-MN-yAo"; */
+"8ic-MN-yAo.text" = "SportsCenter";
+
+/* Class = "UIButton"; normalTitle = "R"; ObjectID = "9M7-96-EJU"; */
+"9M7-96-EJU.normalTitle" = "R";
+
+/* Class = "UIButton"; normalTitle = "F"; ObjectID = "ADA-OP-TYm"; */
+"ADA-OP-TYm.normalTitle" = "F";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "GDG-W0-2BA"; */
+"GDG-W0-2BA.title" = "Home";
+
+/* Class = "UIBarButtonItem"; title = "Logout"; ObjectID = "GHr-cT-a0d"; */
+"GHr-cT-a0d.title" = "Logout";
+
+/* Class = "UILabel"; text = "2/2/15"; ObjectID = "RkT-AC-7vT"; */
+"RkT-AC-7vT.text" = "2/2/15";
+
+/* Class = "UILabel"; text = "99999"; ObjectID = "Zs3-WO-X45"; */
+"Zs3-WO-X45.text" = "99999";
+
+/* Class = "UILabel"; text = "Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet "; ObjectID = "dXv-Ju-WBa"; */
+"dXv-Ju-WBa.text" = "Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet Tweet ";
+
+/* Class = "UILabel"; text = "@SportsCenter"; ObjectID = "f33-hT-ipX"; */
+"f33-hT-ipX.text" = "@SportsCenter";
+
+/* Class = "UILabel"; text = "99999"; ObjectID = "qvc-3r-Dts"; */
+"qvc-3r-Dts.text" = "99999";
+
+/* Class = "UIButton"; normalTitle = "A"; ObjectID = "uIJ-lC-cmj"; */
+"uIJ-lC-cmj.normalTitle" = "A";

@@ -34,10 +34,14 @@ class User: NSObject {
     }
     //setting up the logout function
     func logout() {
+//        User.currentUser = nil
+//        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+//        NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
         User.currentUser = nil
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
-        NSNotificationCenter.defaultCenter().postNotificationName(userDidLoginNotification, object: nil)
-    }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
+            }
     
     class var currentUser: User? {
         get {

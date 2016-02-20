@@ -26,7 +26,7 @@
 		96600D69B0A22F269B90FB7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BE3DD6081C703BCD00B388A0 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		BE3ED0DF1C7139AB004B432F /* TweetsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsCell.swift; sourceTree = "<group>"; };
-		BE3ED0E11C714803004B432F /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		BE3ED0E11C714803004B432F /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationController.swift; path = ../HomeNavigationController.swift; sourceTree = "<group>"; };
 		BE86E8841C6EF2EE00D6AEE2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE86E8861C6EF30900D6AEE2 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		BEE68F671C6985C000F77A4B /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +89,6 @@
 		BEE68F5E1C6985BF00F77A4B = {
 			isa = PBXGroup;
 			children = (
-				BE3ED0E11C714803004B432F /* HomeNavigationController.swift */,
 				BEE68F691C6985C000F77A4B /* Twitter */,
 				BEE68F681C6985C000F77A4B /* Products */,
 				74BC8B2FE4121DEA326795D7 /* Pods */,
@@ -108,6 +107,8 @@
 		BEE68F691C6985C000F77A4B /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				BE3ED0E11C714803004B432F /* HomeNavigationController.swift */,
+				BE3DD6081C703BCD00B388A0 /* TweetsViewController.swift */,
 				BE3ED0DE1C713955004B432F /* Views */,
 				BE86E8831C6EF2B700D6AEE2 /* Models */,
 				BEE68F7C1C69C95500F77A4B /* API */,
@@ -117,7 +118,6 @@
 				BEE68F711C6985C000F77A4B /* Assets.xcassets */,
 				BEE68F731C6985C000F77A4B /* LaunchScreen.storyboard */,
 				BEE68F761C6985C000F77A4B /* Info.plist */,
-				BE3DD6081C703BCD00B388A0 /* TweetsViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";

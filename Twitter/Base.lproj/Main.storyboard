@@ -33,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="337.99999999999989"/>
+            <point key="canvasLocation" x="-119" y="247"/>
         </scene>
         <!--Home-->
         <scene sceneID="c06-hs-Py6">
@@ -47,15 +47,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="227" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-zN-2eo">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="229" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-zN-2eo">
+                                <rect key="frame" x="0.0" y="-41" width="320" height="609"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetsCell" rowHeight="227" id="FwS-s7-dXB" customClass="TweetsCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="227"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetsCell" rowHeight="229" id="FwS-s7-dXB" customClass="TweetsCell" customModule="Twitter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="229"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FwS-s7-dXB" id="4ps-JO-Ykw">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="226"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mhg-Hq-uRI">
@@ -138,6 +138,7 @@
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mhg-Hq-uRI" secondAttribute="bottom" constant="70" id="Da6-mB-lSy"/>
                                                 <constraint firstItem="dXv-Ju-WBa" firstAttribute="leading" secondItem="Mhg-Hq-uRI" secondAttribute="trailing" constant="5" id="PlC-wi-eil"/>
                                                 <constraint firstItem="8ic-MN-yAo" firstAttribute="top" secondItem="Mhg-Hq-uRI" secondAttribute="top" id="Rqm-aU-qMP"/>
+                                                <constraint firstAttribute="trailing" secondItem="dXv-Ju-WBa" secondAttribute="trailing" constant="44" id="Uui-QL-Gb1"/>
                                                 <constraint firstItem="Mhg-Hq-uRI" firstAttribute="top" secondItem="4ps-JO-Ykw" secondAttribute="top" constant="5" id="XjN-od-WJY"/>
                                                 <constraint firstItem="f33-hT-ipX" firstAttribute="leading" secondItem="Mhg-Hq-uRI" secondAttribute="trailing" constant="5" id="fwz-Ui-jkr"/>
                                                 <constraint firstItem="f33-hT-ipX" firstAttribute="top" secondItem="8ic-MN-yAo" secondAttribute="bottom" id="j0z-Dl-iaz"/>
@@ -162,11 +163,17 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jAu-zN-2eo" firstAttribute="leading" secondItem="fDu-SY-sa4" secondAttribute="leading" id="EJ6-jJ-tup"/>
+                            <constraint firstItem="jAu-zN-2eo" firstAttribute="top" secondItem="fDu-SY-sa4" secondAttribute="top" constant="-41" id="QCX-vR-Usk"/>
+                            <constraint firstItem="c4N-Zm-pTA" firstAttribute="top" secondItem="jAu-zN-2eo" secondAttribute="bottom" id="kUR-um-Pji"/>
+                            <constraint firstAttribute="trailing" secondItem="jAu-zN-2eo" secondAttribute="trailing" id="quj-PR-Tfo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="GDG-W0-2BA">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="GHr-cT-a0d">
                             <connections>
-                                <action selector="onLogout:" destination="bpE-j8-dXb" id="1KO-bj-dqk"/>
+                                <action selector="onLogout:" destination="bpE-j8-dXb" id="E1e-Vq-Krp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -176,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xg-VY-d5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="336"/>
+            <point key="canvasLocation" x="838" y="247"/>
         </scene>
         <!--Home Navigation Controller-->
         <scene sceneID="KkA-78-gUT">
@@ -194,7 +201,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wX-2m-Bfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="337.99999999999989"/>
+            <point key="canvasLocation" x="402" y="247"/>
         </scene>
     </scenes>
     <resources>

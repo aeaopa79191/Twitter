@@ -36,6 +36,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+
         //ended code for pull to refresh
         
         //for the autolayout of the tableview row
@@ -92,14 +93,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.tweet = tweets![indexPath.row]
                 
         return cell
-        
-        
-        
     }
     
-    @IBAction func onLogout(sender: AnyObject) {
+    
+    @IBAction func onLogout(sender: UIButton) {
         User.currentUser?.logout()
     }
+    
+    
+    
 /*
     //making infinite scroll
     func loadMoreData(){

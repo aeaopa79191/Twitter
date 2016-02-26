@@ -28,12 +28,6 @@ class TweetsCell: UITableViewCell {
             userName.text = tweet.user!.name
             userHandle.text = "@\(tweet.user!.screenname!)"
             
-          // profileImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
-           // ratingImageView.setImageWithURL(business.ratingImageURL!)
-            //profileImage.setImageWithURL(tweet.user!.profileImageUrl!)
-           // let imageURL = tweet.user?.name
-            //profileImage.setImageWithURL(NSURL(string: imageURL!)!)
-            
             let imageUrl = tweet.user?.profileImageUrl!
             profileImage.setImageWithURL(NSURL(string: imageUrl!)!)
             
@@ -131,8 +125,7 @@ class TweetsCell: UITableViewCell {
     }
     
     @IBAction func onFav(sender: AnyObject) {
-        
-        TwitterClient.sharedInstance.favTweet(Int(tweetID)!, params: nil, completion: {(error) -> () in
+    TwitterClient.sharedInstance.favTweet(Int(tweetID)!, params: nil, completion: {(error) -> () in
             self.favButton.setImage(UIImage(named: "like-action-on.png"), forState: UIControlState.Selected)
             
             if self.favCountLabel.text! > "0" {

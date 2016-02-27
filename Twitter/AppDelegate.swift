@@ -19,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        //Creating Global Defaults
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.URLForKey("mediaURL_String")    //tweet image file address
+        userDefaults.stringForKey("detailReplyTo_Handle")
+
+        
+        
         UINavigationBar.appearance().barTintColor = UIColor(red: 95/255, green: 205/255, blue: 355/255, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
         UINavigationBar.appearance().tintColor = UIColor.blackColor()
@@ -29,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             var vc =
             
-            storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
+            storyboard.instantiateViewControllerWithIdentifier("TabCon") as! UITabBarController
             
             window?.rootViewController = vc
             

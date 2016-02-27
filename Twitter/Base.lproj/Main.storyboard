@@ -28,7 +28,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="Vga-HZ-wqL" kind="modal" identifier="loginSegue" id="rHJ-2Y-SDl"/>
+                        <segue destination="nu6-Xv-Ino" kind="modal" identifier="loginSegue" id="rHJ-2Y-SDl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="229" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-zN-2eo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="229" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-zN-2eo">
                                 <rect key="frame" x="0.0" y="-41" width="320" height="609"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -87,6 +87,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIJ-lC-cmj">
                                                     <rect key="frame" x="81" y="101" width="20" height="20"/>
                                                     <state key="normal" title="A" image="reply-action-pressed_0"/>
+                                                    <connections>
+                                                        <segue destination="hWW-Zn-V95" kind="modal" id="vM9-RV-0nT"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M7-96-EJU">
                                                     <rect key="frame" x="146" y="101" width="20" height="20"/>
@@ -157,7 +160,7 @@
                                             <outlet property="tweetContentText" destination="dXv-Ju-WBa" id="hUf-KR-bVx"/>
                                             <outlet property="userHandle" destination="f33-hT-ipX" id="XWp-IZ-98d"/>
                                             <outlet property="userName" destination="8ic-MN-yAo" id="UXK-hE-lC5"/>
-                                            <segue destination="Zej-0b-fMz" kind="push" id="nDs-PK-C7b"/>
+                                            <segue destination="Zej-0b-fMz" kind="push" identifier="openDetail" id="nDs-PK-C7b"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -184,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xg-VY-d5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="247"/>
+            <point key="canvasLocation" x="1370" y="247"/>
         </scene>
         <!--Tweets Detail View Controller-->
         <scene sceneID="vHa-Ww-eMs">
@@ -227,10 +230,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWK-qf-FRb">
                                 <rect key="frame" x="20" y="283" width="20" height="20"/>
                                 <state key="normal" title="A" image="reply-action-pressed_0"/>
+                                <connections>
+                                    <segue destination="hWW-Zn-V95" kind="modal" id="UjP-AT-9jk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWQ-tv-lyy">
                                 <rect key="frame" x="128" y="283" width="20" height="20"/>
                                 <state key="normal" title="R" image="retweet-action-inactive"/>
+                                <connections>
+                                    <action selector="onRetweet:" destination="Zej-0b-fMz" eventType="touchUpInside" id="aKs-ib-tzR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJX-mg-NMw">
                                 <rect key="frame" x="128" y="267" width="33" height="12"/>
@@ -263,6 +272,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3F-ik-2Dk">
                                 <rect key="frame" x="228" y="283" width="20" height="20"/>
                                 <state key="normal" title="F" image="like-action-off"/>
+                                <connections>
+                                    <action selector="onFav:" destination="Zej-0b-fMz" eventType="touchUpInside" id="Y25-tZ-2KH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RETWEETS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG4-Ip-ajP">
                                 <rect key="frame" x="60" y="262" width="88" height="21"/>
@@ -296,7 +308,11 @@
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Tweet"/>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" title="Reply" id="QrL-fv-Z8k"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="QrL-fv-Z8k">
+                            <connections>
+                                <segue destination="hWW-Zn-V95" kind="modal" id="bT9-f6-5fQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="createdTime" destination="VN2-pA-5Lo" id="1V0-vD-eUx"/>
@@ -313,12 +329,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6PJ-19-yPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1261" y="244"/>
+            <point key="canvasLocation" x="1793" y="244"/>
         </scene>
-        <!--Home Navigation Controller-->
+        <!--Timeline-->
         <scene sceneID="KkA-78-gUT">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Vga-HZ-wqL" customClass="HomeNavigationController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timeline" id="Yyq-XU-66w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0U3-az-Ydl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -331,7 +348,87 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wX-2m-Bfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320" y="337"/>
+            <point key="canvasLocation" x="956" y="244"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="bsz-XO-mho">
+            <objects>
+                <viewController id="cv5-sh-Qt3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dxj-Fp-c0Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nh1-IG-4Yv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UAn-jF-mOk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="nr8-lG-s3g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTC-PA-XBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="946"/>
+        </scene>
+        <!--Reply View Controller-->
+        <scene sceneID="Yym-QK-SGc">
+            <objects>
+                <viewController id="hWW-Zn-V95" customClass="ReplyViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oyC-2N-1tg"/>
+                        <viewControllerLayoutGuide type="bottom" id="YBe-px-cKX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhe-LO-sNT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aPF-RI-H04">
+                                <rect key="frame" x="35" y="124" width="240" height="258"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgh-1v-3F2">
+                                <rect key="frame" x="234" y="445" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onSend:" destination="hWW-Zn-V95" eventType="touchUpInside" id="0w7-Zu-Qhh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um8-cQ-KDF">
+                                <rect key="frame" x="19" y="20" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="hWW-Zn-V95" eventType="touchUpInside" id="iJt-Fz-1TD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="replyTextField" destination="aPF-RI-H04" id="RhO-4q-B60"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSg-b8-KlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="1083"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zSf-Aw-7MB">
+            <objects>
+                <tabBarController storyboardIdentifier="TabCon" automaticallyAdjustsScrollViewInsets="NO" id="nu6-Xv-Ino" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="h7s-hi-awf">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Vga-HZ-wqL" kind="relationship" relationship="viewControllers" id="egc-ON-01d"/>
+                        <segue destination="cv5-sh-Qt3" kind="relationship" relationship="viewControllers" id="anF-Ft-qqc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvb-Rv-MZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="218"/>
         </scene>
     </scenes>
     <resources>
@@ -339,4 +436,7 @@
         <image name="reply-action-pressed_0" width="65" height="72"/>
         <image name="retweet-action-inactive" width="75" height="72"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vM9-RV-0nT"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol DataEnteredDelegate {
+//    func userDidReplyToTweet(tweet: Tweet)
+    func userDidFavoriteTweet(tweet: Tweet)
+    func userDidRetweetTweet(tweet: Tweet)
+//    func userDidTapImageProfile(sender: UITapGestureRecognizer, user: User)
+}
+
 class TweetsCell: UITableViewCell {
     
     @IBOutlet weak var profileImage: UIImageView!
@@ -20,6 +27,8 @@ class TweetsCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var favCountLabel: UILabel!
+    
+    var delegate:DataEnteredDelegate?
 
     var tweetID: String = ""
     var tweet: Tweet! {
@@ -110,7 +119,7 @@ class TweetsCell: UITableViewCell {
     
     // (#5R) tryign to action
     @IBAction func onRetweet(sender: AnyObject) {
-        
+        delegate?.userDidRetweetTweet(tweet!)
         TwitterClient.sharedInstance.retweet(Int(tweetID)!, params: nil, completion: {(error) -> () in
             self.retweetButton.setImage(UIImage(named: "retweet-action-on-pressed.png"), forState: UIControlState.Selected)
             
@@ -125,6 +134,8 @@ class TweetsCell: UITableViewCell {
     }
     
     @IBAction func onFav(sender: AnyObject) {
+        delegate?.userDidFavoriteTweet(tweet!)
+        
     TwitterClient.sharedInstance.favTweet(Int(tweetID)!, params: nil, completion: {(error) -> () in
             self.favButton.setImage(UIImage(named: "like-action-on.png"), forState: UIControlState.Selected)
             
@@ -137,5 +148,6 @@ class TweetsCell: UITableViewCell {
         })
         
     }
+    
 
 }

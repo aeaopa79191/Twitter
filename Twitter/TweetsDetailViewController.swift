@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol TweetsFeedDelegate {
-    func userDidFavoriteTweet(tweet: Tweet)//, index: Int)
-    func userDidRetweetTweet(tweet: Tweet)//, index: Int)
-}
+//protocol TweetsFeedDelegate {
+//    func userDidFavoriteTweet(tweet: Tweet)//, index: Int)
+//    func userDidRetweetTweet(tweet: Tweet)//, index: Int)
+//}
 
 class TweetsDetailViewController: UIViewController  {
     
@@ -25,19 +25,17 @@ class TweetsDetailViewController: UIViewController  {
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var favCountLabel: UILabel!
-    var detailTweet: Tweet!
-    //private var tweetdETAIL = [Tweet]()
+    var detailTweet: Tweet! //data from TweetsViewController
     var replyID: Int?
 
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var replyTo: String?
-
     
-    var delegate: TweetsFeedDelegate?
+//  var delegate: TweetsFeedDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var tweetID: String = ""
+                //var tweetID: String = ""
         
                 tweetContentText.text = detailTweet.text
                 userName.text = detailTweet.user!.name
@@ -58,20 +56,16 @@ class TweetsDetailViewController: UIViewController  {
                 retweetCountLabel.text! == "0" ? (retweetCountLabel.hidden = true) : (retweetCountLabel.hidden = false)
                 favCountLabel.text! == "0" ? (favCountLabel.hidden = true) : (favCountLabel.hidden = false)
         
-        userDefaults.setValue(replyTo, forKey: "detailReplyTo_Handle")
-
-        
-
+                userDefaults.setValue(replyTo, forKey: "detailReplyTo_Handle")
     }
     
     
     @IBAction func onRetweet(sender: AnyObject) {
-        delegate?.userDidRetweetTweet(detailTweet!)//,index: 0)
+        //delegate?.userDidRetweetTweet(detailTweet!)//,index: 0)
         
         //retweetCountLabel.text = "\(detailTweet!.retweetCount! + 1)"
         //retweetButton.selected = true
         self.retweetCountLabel.text = String(self.detailTweet!.retweetCount! + 1)
-
     }
     
 
@@ -79,7 +73,6 @@ class TweetsDetailViewController: UIViewController  {
         //retweetCountLabel.text = "\(detailTweet!.retweetCount! + 1)"
         //retweetButton.selected = true
         self.favCountLabel.text = String(self.detailTweet!.favCount! + 1)
-
     }
     
     

@@ -16,14 +16,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     var delegate:MainTweetDelegate?
 
-    
     var tweets: [Tweet]?
     
     var refreshControl: UIRefreshControl!
     let delay = 3.0 * Double(NSEC_PER_SEC)
     
      var isMoreDataLoading = false
-    
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -96,13 +94,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
-        
         cell.tweet = tweets![indexPath.row]
-        //delegate?.passingCellData(cell.tweet)
-        
         return cell
     }
-    
     
     @IBAction func onLogout(sender: UIButton) {
         User.currentUser?.logout()
@@ -111,15 +105,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //pass data to "DetailsViewController"
         if (segue.identifier == "openDetail") {
+            
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let tweetss = tweets![indexPath!.row]
-            
-            
             let detailTweetViewController = segue.destinationViewController as! TweetsDetailViewController
             detailTweetViewController.detailTweet = tweetss
 
         }
     }
+    
     
     
 /*

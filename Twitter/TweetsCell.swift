@@ -29,7 +29,6 @@ class TweetsCell: UITableViewCell {
     @IBOutlet weak var favCountLabel: UILabel!
     
     var delegate:DataEnteredDelegate?
-
     var tweetID: String = ""
     var tweet: Tweet! {
         didSet {

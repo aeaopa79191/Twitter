@@ -15,6 +15,7 @@ class Tweet: NSObject {
     var text: String?
     var createdAtString: String?
     var createdAt: NSDate?
+
     
     //For favCount and retweetCount
     var id: String

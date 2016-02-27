@@ -27,6 +27,7 @@ class User: NSObject {
     var follower: Int?
     var following: Int?
     var meID: String
+    var tweetcount: Int?
 
     
     init(dictionary: NSDictionary){
@@ -44,7 +45,7 @@ class User: NSObject {
         follower = dictionary["followers_count"] as? Int
         following = dictionary["friends_count"] as? Int
         tagline = dictionary["description"] as? String
-
+        tweetcount = dictionary["statuses_count"] as? Int
 
     }
     //setting up the logout function

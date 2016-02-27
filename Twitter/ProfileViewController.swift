@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var numOfFollowing: UILabel!
     @IBOutlet weak var numOfFollowers: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
+    @IBOutlet weak var numOfTweets: UILabel!
     
     //var tweetsProfile: Tweet!  //data passed from DetailsViewController
     
@@ -38,7 +39,16 @@ class ProfileViewController: UIViewController {
             numOfFollowing.text = String(flowingasdad)
         }else {
             numOfFollowing.text = "0"
+            
         }
+        
+        if let tweetlabel = User.currentUser?.tweetcount!  {
+            numOfTweets.text = String(tweetlabel)
+        }else {
+            numOfTweets.text = "0"
+        }
+        
+        
 
         //getProfile()
 

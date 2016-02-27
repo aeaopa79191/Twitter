@@ -133,5 +133,28 @@ class TwitterClient: BDBOAuth1SessionManager {
                 completion(tweet: nil, error: error)
         }
     }
+    
+    func getProfileBanner(params: NSDictionary?, completion: (tweet: Tweet?, error: NSError?) -> ()) {
+        
+        GET("1.1/users/profile_banner.json", parameters: params, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            let tweet = Tweet.tweetAsDictionary(response as! NSDictionary)
+            completion(tweet: tweet, error: nil)
+            
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                completion(tweet: nil, error: error)
+        }
+    }
 
+    
+    
+    func getUserTimeline(params: NSDictionary?, completion: (tweet: Tweet?, error: NSError?) -> ()) {
+        
+        GET("1.1/statuses/user_timeline.json", parameters: params, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            let tweet = Tweet.tweetAsDictionary(response as! NSDictionary)
+            completion(tweet: tweet, error: nil)
+            
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                completion(tweet: nil, error: error)
+        }
+    }
 }

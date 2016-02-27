@@ -31,6 +31,7 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
 //        
         
         replyTextField.becomeFirstResponder()
+        
 //        replyTextField.delegate = self
 
         // Do any additional setup after loading the view.
@@ -60,7 +61,6 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func onCancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-
     }
     
     

@@ -22,15 +22,30 @@ class User: NSObject {
     var profileImageUrl: String?
     var tagline: String?
     var dictionary: NSDictionary
-    
+    var profileBannerURL: String?
+    var location: String?
+    var follower: Int?
+    var following: Int?
+    var meID: String
+
     
     init(dictionary: NSDictionary){
         self.dictionary = dictionary
         
+        meID = String(dictionary["id"]!)   //<-not sure about this string
+
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
+        profileBannerURL = dictionary["profile_banner_url"] as? String
+        
+        location = dictionary["location"] as? String
+        follower = dictionary["followers_count"] as? Int
+        following = dictionary["friends_count"] as? Int
+        tagline = dictionary["description"] as? String
+
+
     }
     //setting up the logout function
     func logout() {

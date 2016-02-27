@@ -36,14 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Current user detected: \(User.currentUser?.name)")
             
             var vc =
-            
             storyboard.instantiateViewControllerWithIdentifier("TabCon") as! UITabBarController
-            
             window?.rootViewController = vc
-            
-            
         }
         return true
+        
+        
     }
 
     func userDidLogout(){

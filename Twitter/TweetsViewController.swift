@@ -101,9 +101,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func onLogout(sender: UIButton) {
         User.currentUser?.logout()
     }
+
     
+    //pass data to "DetailsViewController"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //pass data to "DetailsViewController"
         if (segue.identifier == "openDetail") {
             
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)

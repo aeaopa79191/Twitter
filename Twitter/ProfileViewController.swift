@@ -29,14 +29,15 @@ class ProfileViewController: UIViewController {
         userName.text = User.currentUser?.name
         handle.text = User.currentUser?.screenname
                     taglineLabel.text = User.currentUser?.tagline!
-        if let followersdsdfs = User.currentUser?.follower!  {
-            numOfFollowers.text = String(followersdsdfs)
+        
+        if let followerExist = User.currentUser?.follower!  {
+            numOfFollowers.text = String(followerExist)
         }else {
             numOfFollowers.text = "0"
         }
         
-        if let flowingasdad = User.currentUser?.following!  {
-            numOfFollowing.text = String(flowingasdad)
+        if let followingExist = User.currentUser?.following!  {
+            numOfFollowing.text = String(followingExist)
         }else {
             numOfFollowing.text = "0"
             

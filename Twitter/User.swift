@@ -26,26 +26,31 @@ class User: NSObject {
     var location: String?
     var follower: Int?
     var following: Int?
-    var meID: String
+    var meID: Int?
     var tweetcount: Int?
 
     
     init(dictionary: NSDictionary){
         self.dictionary = dictionary
         
-        meID = String(dictionary["id"]!)   //<-not sure about this string
+        meID = dictionary["id"]! as? Int  //<-not sure about this string
 
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
-        profileBannerURL = dictionary["profile_banner_url"] as? String
+        
+        if dictionary["profile_banner_url"] != nil {
+            profileBannerURL = (dictionary["profile_banner_url"] as? String)!
+        }
         
         location = dictionary["location"] as? String
         follower = dictionary["followers_count"] as? Int
         following = dictionary["friends_count"] as? Int
         tagline = dictionary["description"] as? String
         tweetcount = dictionary["statuses_count"] as? Int
+        
+    
 
     }
     //setting up the logout function

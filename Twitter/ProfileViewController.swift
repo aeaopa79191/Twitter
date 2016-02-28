@@ -24,11 +24,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         profileImage.setImageWithURL(NSURL(string: User.currentUser!.profileImageUrl!)!)
         userName.text = User.currentUser?.name
         handle.text = User.currentUser?.screenname
-                    taglineLabel.text = User.currentUser?.tagline!
+        taglineLabel.text = User.currentUser?.tagline!
+        banner.setImageWithURL(NSURL(string: (User.currentUser?.profileBannerURL!)!)!)
         
         if let followerExist = User.currentUser?.follower!  {
             numOfFollowers.text = String(followerExist)
@@ -48,14 +48,17 @@ class ProfileViewController: UIViewController {
         }else {
             numOfTweets.text = "0"
         }
-        
-        
-
-        //getProfile()
-
+//        getBanner()
         // Do any additional setup after loading the view.
     }
     
+    
+//    func getBanner() {
+//        TwitterClient.sharedInstance.getProfileBanner((User.currentUser?.meID)!, params: nil) { (error) -> () in
+//            print("meID is \(User.currentUser?.meID)")
+//            self.banner.setImageWithURL(NSURL(string: (User.currentUser?.profileBannerURL!)!)!)
+//        }
+//    }
 
 
 
